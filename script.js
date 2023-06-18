@@ -40,11 +40,17 @@ const displayScreen = document.querySelector('.display-screen');
 // function displayText (text) {
 //     displayScreen.textContent = `${text}`
 // };
+
+// innerText
+// textContent
+// innerHtml
+
 // Numbers 
 const numbers = document.querySelectorAll('.number-button')
 numbers.forEach(number => {
     number.addEventListener('click', e => {
         console.log(e.target.innerText);
+        displayScreen.innerText = e.target.innerText;
     });
 });
 
@@ -53,7 +59,6 @@ const operators = document.querySelectorAll('.operator-button')
 operators.forEach(number => {
     number.addEventListener('click', e => {
         console.log(e.target.innerText);
-        // displayText('hello world')
     });
 });
 
