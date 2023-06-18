@@ -32,3 +32,21 @@ function operator(numA, numB, operator) {
             return divide(numA, numB);
     };
 };
+
+// Create variables (event listener) for buttons/display 
+
+// Numbers 
+const numbers = document.querySelectorAll('.number-button')
+numbers.forEach(number => {
+    number.addEventListener('click', e => {
+        console.log(e.target.innerText);
+    });
+});
+
+// Operators
+const operators = document.querySelectorAll('.operator-button')
+operators.forEach(number => {
+    number.addEventListener('click', e => {
+        console.log(e.target.innerText);
+    });
+});
