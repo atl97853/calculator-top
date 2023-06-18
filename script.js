@@ -35,7 +35,7 @@ function operator(numA, numB, operator) {
 
 // Create variables (event listener) for buttons/display 
 
-// Display testing
+// Display Screen - testing
 const displayScreen = document.querySelector('.display-screen');
 
 const displayANumber = document.querySelector('.display-aNum');
@@ -46,8 +46,14 @@ const displayOperator = document.querySelector('.display-operator');
 // textContent
 // innerHtml
 
+// Display buttons 
+const clearButton = document.querySelector('.clear-button');
+clearButton.addEventListener('click', () => {
+    displayScreen.textContent = " ";
+});
+
 // Numbers 
-const numbers = document.querySelectorAll('.number-button')
+const numbers = document.querySelectorAll('.number-button');
 numbers.forEach(number => {
     number.addEventListener('click', e => {
         console.log(e.target.innerText);
@@ -56,7 +62,7 @@ numbers.forEach(number => {
 });
 
 // Operators
-const operators = document.querySelectorAll('.operator-button')
+const operators = document.querySelectorAll('.operator-button');
 operators.forEach(number => {
     number.addEventListener('click', e => {
         console.log(e.target.innerText);
