@@ -35,11 +35,12 @@ function operator(numA, numB, operator) {
 
 // Create variables (event listener) for buttons/display 
 
-// Display 
+// Display testing
 const displayScreen = document.querySelector('.display-screen');
-// function displayText (text) {
-//     displayScreen.textContent = `${text}`
-// };
+
+const displayANumber = document.querySelector('.display-aNum');
+const displayBNumber = document.querySelector('.display-bNum');
+const displayOperator = document.querySelector('.display-operator');
 
 // innerText
 // textContent
