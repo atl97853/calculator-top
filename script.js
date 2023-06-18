@@ -35,6 +35,11 @@ function operator(numA, numB, operator) {
 
 // Create variables (event listener) for buttons/display 
 
+// Display 
+const displayScreen = document.querySelector('.display-screen');
+// function displayText (text) {
+//     displayScreen.textContent = `${text}`
+// };
 // Numbers 
 const numbers = document.querySelectorAll('.number-button')
 numbers.forEach(number => {
@@ -48,5 +53,7 @@ const operators = document.querySelectorAll('.operator-button')
 operators.forEach(number => {
     number.addEventListener('click', e => {
         console.log(e.target.innerText);
+        // displayText('hello world')
     });
 });
+
