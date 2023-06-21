@@ -55,7 +55,6 @@ clearButton.addEventListener('click', () => {
     aNum = '';
     operatorSymbol = 'none';
     bNum = '';
-    resultNum = 'none';
     console.log(`a = ${aNum}\nop = ${operatorSymbol}\nb = ${bNum}`);
 });
 
@@ -67,11 +66,7 @@ numbers.forEach(number => {
         console.log(value);
 
         if (operatorSymbol === 'none') {
-            if (resultNum !== 'none') {
-                aNum = resultNum;
-            } else {
-                aNum += value;
-            };
+            aNum += value;
             displayScreen.innerText = aNum;
         } else {
             bNum += value;
@@ -86,7 +81,7 @@ operators.forEach(number => {
         
         const value = e.target.innerText;
         operatorSymbol = value;
-        console.log(value);
+        console.log(value); // this is just for testing
         displayScreen.innerText = operatorSymbol;
     });
 });
@@ -94,15 +89,18 @@ operators.forEach(number => {
 // Equals operator 
 equalsOperator.addEventListener('click', () => {
 
+    console.log(`a = ${aNum}\nop = ${operatorSymbol}\nb = ${bNum}`);
+    const result = operator(Number(aNum),operatorSymbol,Number(bNum));
+    console.log(result)
+    displayScreen.innerText = result;
+});
+
+
+
+
+
     // // I need to imitate this, make it work with the display
     // let aNum = Number(prompt('insert a number'));
     // let op = prompt('insert a math operator');
     // let bNum = Number(prompt('insert a number'));
     // console.log(operator(aNum,op,bNum));
-
-    // console.log(aNum);
-    console.log(`a = ${aNum}\nop = ${operatorSymbol}\nb = ${bNum}`);
-    resultNum = operator(Number(aNum),operatorSymbol,Number(bNum));
-    console.log(resultNum)
-    displayScreen.innerText = resultNum;
-})
