@@ -42,12 +42,13 @@ let operatorSymbol = 'none';
 const displayScreen = document.querySelector('.display-screen');
 // Button and operator variables 
 const clearButton = document.querySelector('.clear-button');
+const deleteButton = document.querySelector('.delete-button');
 const numbers = document.querySelectorAll('.number-button');
 const operators = document.querySelectorAll('.operator-button');
 const equalsOperator = document.querySelector('.equals');
 
 // Calculator Functionality
-// Display buttons 
+// Clear display 
 clearButton.addEventListener('click', () => {
 
     displayScreen.textContent = "";
@@ -55,6 +56,18 @@ clearButton.addEventListener('click', () => {
     operatorSymbol = 'none';
     bNum = '';
     console.log(`a = ${aNum}\nop = ${operatorSymbol}\nb = ${bNum}`);
+});
+
+// Delete operator
+deleteButton.addEventListener('click', () => {
+
+    if (operatorSymbol === 'none') {
+        aNum = aNum.slice(0,aNum.length - 1);
+        displayScreen.innerText = aNum;
+    } else {
+        bNum = bNum.slice(0,bNum.length - 1);
+        displayScreen.innerText = bNum;
+    };        
 });
 
 // General numbers 
