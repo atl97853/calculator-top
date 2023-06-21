@@ -38,11 +38,14 @@ let aNum = '';
 let bNum = '';
 let operatorSymbol = 'none';
 
+let testingResult = 'none';
+
 // Display variables 
 const displayScreen = document.querySelector('.display-screen');
 // Button and operator variables 
 const clearButton = document.querySelector('.clear-button');
 const deleteButton = document.querySelector('.delete-button');
+// const posNegButton = document.querySelector('.pos-neg-button');
 const numbers = document.querySelectorAll('.number-button');
 const operators = document.querySelectorAll('.operator-button');
 const equalsOperator = document.querySelector('.equals');
@@ -58,7 +61,7 @@ clearButton.addEventListener('click', () => {
     console.log(`a = ${aNum}\nop = ${operatorSymbol}\nb = ${bNum}`);
 });
 
-// Delete operator
+// Delete button
 deleteButton.addEventListener('click', () => {
 
     if (operatorSymbol === 'none') {
@@ -103,8 +106,18 @@ equalsOperator.addEventListener('click', () => {
 
     console.log(`a = ${aNum}\nop = ${operatorSymbol}\nb = ${bNum}`);
     const result = operator(Number(aNum),operatorSymbol,Number(bNum));
+
+    aNum = result;
+    operatorSymbol = 'none';
+    bNum = '';
+
     console.log(result)
     displayScreen.innerText = result;
+
+    if (testingResult === 'none' || testingResult === undefined) {
+        testingResult = result;
+        console.log('testing result is here!!!!')
+    };
 });
 
 
