@@ -33,49 +33,45 @@ function operator(numA, operator, numB) {
     };
 };
 
-// Function to display numbers and store variables from user input 
-// function displayOperator (numA, operator, numB) {
-//     // if (operator === undefined) {
-//     //     console.log('ok, it works');
-//     // } else {
-//     //     console.log('nope');
-//     // };
-//     console.log(numA, operator , numB);
-// };
-
-// Create variables (event listener) for buttons/display 
-
-// Operator variables (for now the init value will be 0, but this is error prone, needs an if statement evalution in the function when it works);
+// Operator variables
 let aNum = '';
 let bNum = '';
 let operatorSymbol = 'none';
+let resultNum = 'none';
 
-// Display Screen - testing
+// Display variables 
 const displayScreen = document.querySelector('.display-screen');
-// innerText
-// textContent
-// innerHtml
-
-// Display buttons 
+// Button and operator variables 
 const clearButton = document.querySelector('.clear-button');
+const numbers = document.querySelectorAll('.number-button');
+const operators = document.querySelectorAll('.operator-button');
+const equalsOperator = document.querySelector('.equals');
+
+// Calculator Functionality
+// Display buttons 
 clearButton.addEventListener('click', () => {
 
     displayScreen.textContent = "";
     aNum = '';
     operatorSymbol = 'none';
     bNum = '';
+    resultNum = 'none';
     console.log(`a = ${aNum}\nop = ${operatorSymbol}\nb = ${bNum}`);
 });
 
-// Numbers 
-const numbers = document.querySelectorAll('.number-button');
+// General numbers 
 numbers.forEach(number => {
     number.addEventListener('click', e => {
 
         const value = e.target.innerText;
         console.log(value);
+
         if (operatorSymbol === 'none') {
-            aNum += value;
+            if (resultNum !== 'none') {
+                aNum = resultNum;
+            } else {
+                aNum += value;
+            };
             displayScreen.innerText = aNum;
         } else {
             bNum += value;
@@ -84,8 +80,7 @@ numbers.forEach(number => {
     });
 });
 
-// Operators
-const operators = document.querySelectorAll('.operator-button');
+// General math operators
 operators.forEach(number => {
     number.addEventListener('click', e => {
         
@@ -97,7 +92,6 @@ operators.forEach(number => {
 });
 
 // Equals operator 
-const equalsOperator = document.querySelector('.equals');
 equalsOperator.addEventListener('click', () => {
 
     // // I need to imitate this, make it work with the display
@@ -108,7 +102,7 @@ equalsOperator.addEventListener('click', () => {
 
     // console.log(aNum);
     console.log(`a = ${aNum}\nop = ${operatorSymbol}\nb = ${bNum}`);
-    result = operator(Number(aNum),operatorSymbol,Number(bNum));
-    console.log(result)
-    displayScreen.innerText = result;
+    resultNum = operator(Number(aNum),operatorSymbol,Number(bNum));
+    console.log(resultNum)
+    displayScreen.innerText = resultNum;
 })
