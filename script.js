@@ -1,4 +1,4 @@
-// Create functions for basic math operatos
+// Basic math functions 
 // add, subtract, multiply, divide 
 
 function add (a, b) {
@@ -17,7 +17,7 @@ function divide (a, b) {
     return a / b;
 }
 
-// Create operator function 
+//Operator function
 // takes two numbers, an operator and returns the result 
 
 function operator(numA, operator, numB) {
@@ -37,7 +37,6 @@ function operator(numA, operator, numB) {
 let aNum = '';
 let bNum = '';
 let operatorSymbol = 'none';
-let resultNum = 'none';
 
 // Display variables 
 const displayScreen = document.querySelector('.display-screen');
