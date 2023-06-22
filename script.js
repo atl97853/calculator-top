@@ -114,8 +114,8 @@ equalsOperator.addEventListener('click', () => {
     console.log(result)
     displayScreen.innerText = result;
 
-    if (testingResult === 'none' || testingResult === undefined) {
-        testingResult = result;
+    if (testingResult === 'none' || testingResult === undefined) { //this is just to make sure the things are working correctly
+        testingResult = result;                                    // the if condition is not really necessary 
         console.log('testing result is here!!!!')
     };
 });
