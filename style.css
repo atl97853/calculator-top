@@ -1,3 +1,13 @@
+/* Variables */
+:root {
+    --blue-dark : #212A3E;
+    --blue-light : #394867;
+    --gray : #9BA4B5;
+    --white-blue : #F1F6F9;
+}
+
+
+
 .display-screen {
     display: inline-flex;
     width: 250px;
@@ -31,13 +41,6 @@
 }
 
 /* General style  */
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-};
-
-.calculator-container.numbers {
-    display: flex;
+.display-screen {
 
 }
