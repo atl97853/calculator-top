@@ -57,4 +57,24 @@
     color: var(--blue-dark);
 }
 
+/* Display and sort containers and elements  */
+.calculator-container.body {
+    display: flex;
+    flex-direction: column;
+}
+
+.calculator-container.operators-numbers {
+    display: flex;
+    flex-direction: row;
+}
+
+.calculator-container.numbers {
+    width: 160px;
+    /* display: flex; */
+}
+
+.calculator-container.operators {
+    display: flex;
+    flex-direction: column;
+}
 
