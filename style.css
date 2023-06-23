@@ -4,6 +4,8 @@
     --blue-light : #394867;
     --gray : #9BA4B5;
     --white-blue : #F1F6F9;
+    --cyan : #72d1d1;
+    --green : #88c288;
 }
 
 /* General style  */
@@ -19,6 +21,7 @@ body {
     height: 60px;
     font-size: 25px;
     font-family: Arial, Helvetica, sans-serif;
+    justify-content: end;
     background-color: var(--gray);
     color: var(--blue-dark);
 }
@@ -27,6 +30,7 @@ body {
     background-color: var(--blue-dark);
 }
 
+/* Buttons style  */
 .number-button {
     width: 50px;
     height: 50px;
@@ -35,12 +39,20 @@ body {
     background-color: var(--blue-light);
     color: var(--white-blue)
 }
+:hover.number-button {
+    background-color: var(--gray);
+    color: var(--blue-dark)
+}
 
 .operator-button {
     width: 50px;
     height: 50px;
     background-color: var(--blue-light);
     color: var(--white-blue);
+}
+:hover.operator-button {
+    background-color: var(--cyan);
+    color: var(--blue-dark)    
 }
 
 .clear-button,
@@ -50,6 +62,18 @@ body {
     background-color: var(--white-blue);
     color: var(--blue-dark);
 }
+:hover.clear-button,
+:hover.delete-button {
+    background-color: var(--gray);
+    color: var(--blue-dark);
+}
+
+.number-button,
+.operator-button,
+.equals {
+    border: none;
+    border-radius: 60%;
+}
 
 .equals {
     width: 50px;
@@ -57,6 +81,12 @@ body {
     background-color: var(--white-blue);
     color: var(--blue-dark);
 }
+
+:hover.equals {
+    background-color: var(--green);
+    color: var(--blue-dark);
+}
+/* Buttons style  */
 
 /* Display and sort containers and elements  */
 .calculator-container.body {
