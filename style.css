@@ -11,15 +11,15 @@
 /* General style  */
 body {
     display: flex;
-    margin: 0px;
+    margin: 0;
     justify-content: center;
 }
 
 .display-screen {
     display: inline-flex;
-    width: 300px;
-    height: 90px;
-    font-size: 35px;
+    width: 100%;
+    min-height: 90px;
+    font-size: 3rem;
     font-family: Arial, Helvetica, sans-serif;
     justify-content: end;
     background-color: var(--gray);
@@ -27,6 +27,7 @@ body {
 }
 
 .calculator-container.body {
+    width: 300px;
     background-color: var(--blue-dark);
 }
 
@@ -38,7 +39,7 @@ body {
     padding: 0;
     background-color: var(--blue-light);
     color: var(--white-blue);
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 :hover.number-button {
     background-color: var(--gray);
@@ -50,7 +51,7 @@ body {
     height: 75px;
     background-color: var(--blue-light);
     color: var(--white-blue);
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 :hover.operator-button {
     background-color: var(--cyan);
@@ -63,7 +64,7 @@ body {
     height: 75px;
     background-color: var(--white-blue);
     color: var(--blue-dark);
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 :hover.clear-button,
 :hover.delete-button {
@@ -83,7 +84,7 @@ body {
     height: 75px;
     background-color: var(--white-blue);
     color: var(--blue-dark);
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 
 :hover.equals {
